@@ -10,3 +10,5 @@ COPY shiny-customized.config /etc/shiny-server/shiny-server.conf
 EXPOSE 8080
 
 USER shiny
+
+CMD ["R", "-e", "shiny::runApp('/srv/shiny', host='0.0.0.0', port=8080, launch.browser = F)"]
